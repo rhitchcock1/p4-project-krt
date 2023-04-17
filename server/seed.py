@@ -22,8 +22,8 @@ with app.app_context():
     restaraunts = [res1, res2, res3, res4]
 
     u1= User(username = "Robert", location= "New York")
-    u2= User(username = "Kevin", location= "Pennisivania")
-    u3= User(username = "Tom", location= "Virginia")
+    u2= User(username = "Kevin", location= "Chicago")
+    u3= User(username = "Tim", location= "Virginia")
     users = [u1, u2, u3]
 
     rv1 = Review(rating_ = 1, review = "Terrible!", user_id = 1, restaurant_id = 1)
