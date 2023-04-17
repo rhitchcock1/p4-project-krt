@@ -18,28 +18,28 @@ from config import db
 
 class User(db.Model, SerializerMixin):
     __tablename__ ='users'
-
+    serialize_rules= ("-created_at", "-updated_at", "-reviews",)
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, nullable=False)
     location = db.Column(db.String)
     created_at = db.Column(db.DateTime, server_default = db.func.now())
     updated_at = db.Column(db.DateTime, onupdate = db.func.now())
 
-    reviews = db.relationship('Review', backref = 'user')
+    reviews = db.relationship('Review', backref = 'user', cascade = 'all, delete-orphan')
     restaurants = association_proxy('reviews', 'restaurant')
 
 
 
 class Restaurant(db.Model, SerializerMixin):
     __tablename__ ='restaurants'
-
+    serialize_rules= ("-created_at", "-updated_at", "-reviews",)
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
     location = db.Column(db.String)
     created_at = db.Column(db.DateTime, server_default = db.func.now())
     updated_at = db.Column(db.DateTime, onupdate = db.func.now())
 
-    reviews = db.relationship('Review', backref = 'restaurant')
+    reviews = db.relationship('Review', backref = 'restaurant', cascade = 'all, delete-orphan')
     users = association_proxy('reviews', 'user')
 
     @validates('location')
@@ -52,7 +52,7 @@ class Restaurant(db.Model, SerializerMixin):
 
 class Review(db.Model, SerializerMixin):
     __tablename__ ='reviews'
-    
+    serialize_rules= ("-created_at", "-updated_at",)
     id = db.Column(db.Integer, primary_key=True)
     rating_ = db.Column(db.Integer)
     review = db.Column(db.String)
