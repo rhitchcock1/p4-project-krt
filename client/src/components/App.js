@@ -5,7 +5,8 @@ import React from "react";
 function App() {
   return (
   <div>
-    <h1> Hello KRT! </h1>
+    <h1> Welcome to KRT Kitchen</h1>
+    <h2> A modern eatery specializing in American comfort food </h2>
   </div>
   )
 }
