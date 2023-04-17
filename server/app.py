@@ -8,12 +8,13 @@ from flask_restful import Resource
 
 # Local imports
 from config import app, db, api
-from models import User, Restaurant, User, Review
+from config import app
+from models import User, Restaurant, Review
 
 # Views go here!
 @app.route('/')
 def index():
-    return '<h1>Restraunt A</h1>'
+    return '<h1>Restraunt KRT</h1>'
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
