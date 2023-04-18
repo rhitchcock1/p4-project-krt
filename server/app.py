@@ -102,7 +102,8 @@ class Restaurants(Resource):
             r_dict={
                 'id': r.id,
                 'name': r.name,
-                'location': r.location
+                'location': r.location,
+                'reviews': [{'id': review.id, 'rating': review.rating_ , 'review': review.review, 'img': review.img, 'date': review.created_at} for review in r.reviews]
             }
             r_list.append(r_dict)
         return make_response (r_list, 200)
