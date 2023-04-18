@@ -66,6 +66,8 @@ class ReviewById(Resource):
         db.session.commit()
         return make_response(review.to_dict(), 201)
     
+api.add_resource(ReviewById, "/reviews/<int:id>")
+    
 
 class Users(Resource):
     def get(self):
@@ -90,7 +92,9 @@ class Users(Resource):
         db.session.commit()
         return make_response(new_user.to_dict(), 201)
     
+api.add_resource(Users, "/users")
     
+
 class Restaurants(Resource):
     def get(self):
         r_list = []
@@ -114,8 +118,8 @@ class Restaurants(Resource):
         db.session.commit()
         return make_response(new_restaurant.to_dict(), 201)
 
-    
-api.add_resource(ReviewById, "/reviews/<int:id>")
+api.add_resource(Restaurants, "/restaurants")
+
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
