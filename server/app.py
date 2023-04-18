@@ -65,6 +65,54 @@ class ReviewById(Resource):
         db.session.add(review)
         db.session.commit()
         return make_response(review.to_dict(), 201)
+    
+
+class Users(Resource):
+    def get(self):
+        u_list = []
+        for u in User.query.all():
+            u_dict={
+                'id': u.id,
+                'username': u.username,
+                'location': u.location
+            }
+            u_list.append(u_dict)
+        return make_response (u_list, 200)
+        
+    def post(self):
+        data = request.get_json()
+        try:
+            new_user = User(username = data['username'],
+                            location = data['location'])
+        except ValueError:
+            return make_response({}, )
+        db.session.add(new_user)
+        db.session.commit()
+        return make_response(new_user.to_dict(), 201)
+    
+    
+class Restaurants(Resource):
+    def get(self):
+        r_list = []
+        for r in Restaurant.query.all():
+            r_dict={
+                'id': r.id,
+                'name': r.name,
+                'location': r.location
+            }
+            r_list.append(r_dict)
+        return make_response (r_list, 200)
+    
+    def post(self):
+        data = request.get_json
+        try:
+            new_restaurant = Restaurant(name = data['name'],
+                                        location = data['location'])
+        except ValueError:
+            return make_response({}, )
+        db.session.add(new_restaurant)
+        db.session.commit()
+        return make_response(new_restaurant.to_dict(), 201)
 
     
 api.add_resource(ReviewById, "/reviews/<int:id>")
