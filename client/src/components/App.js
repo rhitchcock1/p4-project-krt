@@ -5,14 +5,29 @@ import Home from "./Home";
 import Reviews from "./Reviews";
 import NavBar from "./NavBar";
 import Restaurant from "./Restaurant";
+import { useState, useEffect } from "react";
 
 function App() {
+
+  const [restaurants, setRestaurants] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:5555/restaurants")
+    .then(respose => respose.json())
+    .then(setRestaurants)
+
+  }, [])
+
+    const restaurantCards = restaurants.map((restaurant) =>{
+      return <Restaurant key={restaurant.id} restaurant={restaurant}/>
+    })
+
   return (
     <div>
       <NavBar />
       <Switch>
         <Route exact path="/restaurant">
-          <Restaurant />
+          {restaurantCards}
         </Route>
         <Route exact path="/reviews">
           <Reviews />
@@ -47,24 +62,12 @@ export default App;
 
 //   }, [])
 
-//   const [restaurants, setRestaurants] = useState([])
-
-//   useEffect(() => {
-//     fetch("http://localhost:5555/restaurants")
-//     .then(respose => respose.json())
-//     .then(setRestaurants)
-
-//   }, [])
-
-
 
 //     const reviewCards = reviews.map((review) =>{
 //       return <ReviewCard key={review.id} review={review}/>
 //     })
 
-//     const restaurantCards = restaurants.map((restaurant) =>{
-//       return <Restaurant key={restaurant.id} restaurant={restaurant}/>
-//     })
+
 
 //   return (
 //   <div>
