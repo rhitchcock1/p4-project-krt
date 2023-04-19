@@ -22,10 +22,10 @@ const RestaurantBack = ({ restaurant }) => {
     const fp = restaurant.reviews.map((review) => {
         return (
             <>
-        <h1>{review.review}</h1> 
-        <h2>{review.rating}</h2>
-        <h2>{review.img}</h2>
-        <h2>{review.date}</h2>
+        <h2>{review.review}</h2> 
+        <h1>{review.rating}</h1>
+        <img src={review.img} alt={review.img}/>
+        <h4>{review.date}</h4>
 
         </>
         )
