@@ -7,6 +7,9 @@ function ReviewCard({review}){
             <h1>Rating: {review.rating_}</h1>
             <h2>Review: {review.review}</h2>
             <img src={review.img} alt={review.review}/>
+            <br></br>
+            <button>Delete</button>
+            <button>Edit</button>
         </div>
     )
 }
