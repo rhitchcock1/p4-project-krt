@@ -9,6 +9,9 @@ const RestaurantFront = ({ restaurant }) => {
     return (
         <div>
             <h1>{restaurant.location}</h1>
+            <div className="med" >
+            <img src={restaurant.img} alt={restaurant.img}/>
+            </div>
             <h2>{restaurant.name}</h2>
         </div>
     )
@@ -24,7 +27,9 @@ const RestaurantBack = ({ restaurant }) => {
             <>
         <h2>{review.review}</h2> 
         <h1>{review.rating}</h1>
+        <div className='small'>
         <img src={review.img} alt={review.img}/>
+        </div>
         <h4>{review.date}</h4>
 
         </>

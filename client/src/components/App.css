@@ -1,3 +1,14 @@
 * {
     /* background: red; */
+
 }
+.small img {
+    width: 185px;
+    height: 150px
+}
+
+.med img {
+    width: 285px;
+    height: 300px
+}
+
