@@ -3,7 +3,10 @@ import ReviewCard from "./ReviewCard";
 
 function Reviews({reviewCard}){
   const [reviews, setReviews] = useState([])
-
+  function onDeleteReview(reviewToDelete){
+    const updatedReviews= reviews.filter((review) =>review.id !== reviewToDelete.id)
+    setReviews(updatedReviews)
+  }
   useEffect(() => {
     fetch("http://localhost:5555/reviews")
     .then(respose => respose.json())
@@ -11,7 +14,7 @@ function Reviews({reviewCard}){
 
   }, [])
     const reviewCards = reviews.map((review) =>{
-      return <ReviewCard key={review.id} review={review}/>
+      return <ReviewCard key={review.id} review={review} onDeleteReview={onDeleteReview}/>
     })
 
     const [reviewArray, setReviewArray]= useState([])
@@ -22,7 +25,6 @@ function Reviews({reviewCard}){
       user_id: "",
       restaurant_id: "",
 
-    
     })
     
     function handleChange(e){
@@ -55,6 +57,7 @@ function Reviews({reviewCard}){
      
     return (
     <div>
+      
       {reviewCards}
       <h1>ADD A REVIEW </h1>
         <form onSubmit={ handleSubmit }>
