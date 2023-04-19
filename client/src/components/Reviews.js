@@ -64,7 +64,10 @@ function Reviews({reviewCard}){
         <div>
          <input value ={formData.rating_} onChange={handleChange}name="rating_" type="number" placeholder="Rating"/>
        </div>
-       <div>
+       {/* <div>
+       <input inputStyle="underline" labelStyle="stacked" startIcon="bubble" placeholder="Textarea with left icon" label="About me">
+         </div> */}
+         <div>
          <input value ={formData.review} onChange={handleChange}name="review" type="text" placeholder="Review"/>
        </div>
        <div>

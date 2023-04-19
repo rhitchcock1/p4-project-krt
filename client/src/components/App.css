@@ -1,5 +1,7 @@
 * {
-    /* background: red; */
+    /* background: #6f6f6f; */
+    font-family: Trebuchet MS;
+   
 
 }
 .small img {
@@ -11,7 +13,35 @@
     width: 285px;
     height: 300px
 }
-
+.home {
+    width: 1300px;
+}
 img {
     width: 400px;
+}
+
+.hrests {
+ display: flex;
+  flex-wrap: wrap;
+
+}
+
+.hrests .rests {
+  flex: 1 0 25%;
+  height: 15px;
+  /* border: 1px solid black; */
+  color: black
+}
+
+.navbar {
+    text-align: center;
+    /* display: flex; */
+  /* flex-wrap: wrap; */
+  background-color: black;
+  color: white;
+  
+}
+
+.navbarh{
+    font-size: 50px;
 }

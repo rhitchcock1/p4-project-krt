@@ -25,8 +25,8 @@ function App() {
 
   return (
     <>
-    <div>
-      <h1>KRT KITCHEN</h1>
+    <div className = "navbar">
+      <h1 className = "navbarh">KRT KITCHEN</h1>
       <NavBar />
       <Switch>
         <Route exact path="/restaurant">
