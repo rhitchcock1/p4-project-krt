@@ -25,6 +25,17 @@ function NavBar() {
         Home
       </NavLink>
       <NavLink
+        to="/menus"
+        exact
+        style={linkStyles}
+        activeStyle={{
+          background: "darkblue",
+        }}
+      >
+        Menus
+      </NavLink>
+      
+      <NavLink
         to="/reviews"
         exact
         style={linkStyles}
@@ -34,6 +45,7 @@ function NavBar() {
       >
         Reviews
       </NavLink>
+
       <NavLink
         to="/restaurant"
         exact

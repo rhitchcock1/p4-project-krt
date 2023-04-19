@@ -1,5 +1,6 @@
 import React from "react";
 import './App.css';
+import Menus from "./Menus"
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Reviews from "./Reviews";
@@ -23,7 +24,9 @@ function App() {
     })
 
   return (
+    <>
     <div>
+      <h1>KRT KITCHEN</h1>
       <NavBar />
       <Switch>
         <Route exact path="/restaurant">
@@ -35,8 +38,15 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
+        <Route exact path="/menus">
+          <Menus />
+        </Route>
       </Switch>
     </div>
+    <footer>
+    {/* <h1>www.krtkitchen.com</h1> */}
+    </footer>
+    </>
   );
 }
 
