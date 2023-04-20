@@ -345,7 +345,7 @@ input {
 
   .restaurantFront {
     border: '10px solid red';
-
+	margin: 0 600px 6px;
 
   }
   .restaurantBack {
@@ -358,4 +358,27 @@ input {
   .inforg {
 	color: black;
 	font-size: 8rem;
+  }
+  .rbutton{
+	display: inline-block;
+	width: 100px;
+	padding: 9px;
+	margin: 0 6px 6px;
+	background: #F3EE18;
+	textDecoration: none;
+	color: black;
+  }
+
+  .rcard-title{
+	color:#F3EE18;
+  }
+
+  .rcontainer{
+	border: grey solid;
+	margin: 0 650px 6px;
+	border-radius: 45px;
+    padding: 1rem 1rem;
+	
+	
+
   }

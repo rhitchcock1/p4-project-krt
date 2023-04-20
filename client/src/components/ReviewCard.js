@@ -55,12 +55,12 @@ function ReviewCard({ review, onDeleteReview, onUpdateReview }) {
           <div class="rcontainer-card">
             <div class="rcontainer-card bg-green-box">
               <h1 class="rcard-title">Rating: {likes}</h1>
-              <button onClick={handleLikeClick}>Rate Me Higher</button>
-              <button onClick={handleDisLikeClick}>Rate Me Lower</button>
+              <button className = "rbutton" onClick={handleLikeClick}>Rate Me Higher</button>
+              <button className = "rbutton" onClick={handleDisLikeClick}>Rate Me Lower</button>
               <h2 class="rcard-description">Review: {review.review}</h2>
               <img src={review.img} alt={review.review} />
               <br></br>
-              <button onClick={handleDelete}>Delete</button>
+              <button className = "rbutton" onClick={handleDelete}>Delete</button>
             </div>
           </div>
         </div>
