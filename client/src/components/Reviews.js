@@ -69,9 +69,8 @@ function Reviews({reviewCard}){
     function onAddReview(newReview){
         setReviews([...reviews, newReview])
 
-    }
+    }   
 
-     
     return (
     <div>
       
@@ -108,15 +107,19 @@ function Reviews({reviewCard}){
        <div class="input">
          <input  class="input-field" value ={formData.img} onChange={handleChange}name="img" type= "text" placeholder="Image"/>
          <label class="input-label">Add an image?</label>
-        </div>
-      
+       </div>
        <div class="input">
          <input class="input-field" value ={formData.user_id} onChange={handleChange}name="user_id" type="number" placeholder="U Id"/>
          <label class="input-label">User</label>
        </div>
        <div class="input">
-         <input class="input-field" value ={formData.restaurant_id} onChange={handleChange}name="restaurant_id" type="number" placeholder="R id"/>
-         <label class="input-label">Location</label>
+           <select onChange={handleChange}>
+             <option class="input-field" id="North" value ="1" >North</option> 
+             <option class="input-field" id="South" value ="2">South</option> 
+             <option class="input-field" id="East" value ="3">East</option> 
+             <option class="input-field" id="West" value ="4">West</option> {/* {formData.restaurant_id} */}
+           </select>
+         <label class="input-label">Location</label>        
        </div>
        <div class="action">
         <button class="action-button" type='submit'>Submit Review</button>
