@@ -113,7 +113,7 @@ function Reviews({reviewCard}){
          <label class="input-label">User</label>
        </div>
        <div class="input">
-           <select onChange={handleChange}>
+           <select class="input-field" onChange={handleChange}>
              <option class="input-field" id="North" value ="1" >North</option> 
              <option class="input-field" id="South" value ="2">South</option> 
              <option class="input-field" id="East" value ="3">East</option> 
@@ -125,9 +125,9 @@ function Reviews({reviewCard}){
         <button class="action-button" type='submit'>Submit Review</button>
       </div>
       </form>
-      <div class="card-info">
+      {/* <div class="card-info">
 			<p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
-		  </div>
+		  </div> */}
 	     </div>
     </div>
       </div>

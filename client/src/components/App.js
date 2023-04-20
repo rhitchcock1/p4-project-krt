@@ -4,6 +4,7 @@ import Menus from "./Menus"
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Reviews from "./Reviews";
+import Locations from "./Locations"
 import NavBar from "./NavBar";
 import Restaurant from "./Restaurant";
 import { useState, useEffect } from "react";
@@ -40,6 +41,9 @@ function App() {
         </Route>
         <Route exact path="/menus">
           <Menus />
+        </Route>
+        <Route exact path="/locations">
+          <Locations />
         </Route>
       </Switch>
     </div>
