@@ -97,7 +97,7 @@ input {
 	border-radius: 0;
 } */
 
-.card {
+ .card {
 	margin: 2rem auto;
 	display: flex;
 	flex-direction: column;
@@ -113,14 +113,14 @@ input {
 	border-radius: 8px;
 	overflow: hidden;
 	padding-bottom: 2%;
-	/* background-image: {KRT_KITCHEN}; */
-	background-repeat: no-repeat;
+	 /* background-image: {KRT_KITCHEN};  */
+	 background-repeat: no-repeat;
 	background-size: 150%;
 	background-position: 0 5%;
-	position: relative;
+	position: relative; 
 }
 
-/* .card-heading {
+.card-heading {
 	position: absolute;
 	left: 10%;
 	top: 15%;
@@ -135,7 +135,7 @@ input {
 		font-weight: 400;
 		margin-top: .25em;
 	}
-} */
+}
 
 .card-form {
 	padding: 2rem 1rem 0;
@@ -207,20 +207,21 @@ input {
 	}
 }
 
-/* .reviewcard{
+.reviewcard{
     border: yellow;
     border-style: dotted;
 }
+
 // review cards */
 
   
-.rcontainer {
+/* .rcontainer { */
     /* width: 1200px !important; */
     /* padding: 0 !important; */
     /* margin-right: auto;
     margin-left: auto; */
     /* place-items: center; */
-    margin: 500px;
+    /* margin: 500px; */
   
     /* @media screen and (min-width: 992px) and (max-width: 1439px) {
       max-width: 1279px !important;
@@ -235,21 +236,21 @@ input {
       padding: 0 !important;
       width: auto !important;
     } */
-  }
+  /* } */
   
-  .gradient-cards {
+  /* .gradient-cards {
     display: grid;
     place-items: center;
     grid-template-columns: repeat(2, 1fr);
     /* gap: -500px; */
     /* padding: 20px; */
-    @media screen and (max-width: 991px) {
+    /* @media screen and (max-width: 991px) {
       grid-template-columns: 1fr;
     }
     
-  }
+  } */
   
-  .rcontainer-title {
+  /* .rcontainer-title {
     text-align: center;
     padding: 0 !important;
     margin-bottom: 40px;
@@ -265,9 +266,9 @@ input {
     width: 100%;
     margin-inline: auto;
     place-items: center;
-  }
+  } */
   
-  .rcontainer-card {
+  /* .rcontainer-card {
     position: relative;
     border: 2px solid transparent;
     background: linear-gradient(71deg, #080509, #1a171c, #080509);
@@ -277,17 +278,17 @@ input {
     place-items: center;
     img {
       margin-bottom: 32px;
-    }
+    } */
    
-  }
+  /* }
   
   .bg-green-box,
   .bg-white-box,
   .bg-yellow-box,
   .bg-blue-box {
     position: relative;
-  }
-  
+  } */
+/*   
   .bg-green-box::after,
   .bg-white-box::after,
   .bg-yellow-box::after,
@@ -300,20 +301,20 @@ input {
     content: "";
     z-index: -1;
     border-radius: 45px;
-  }
+  } */
   
  
-  
+/*   
   .bg-white-box::after {
     background: linear-gradient(71deg, #121013, #b0afb0, #121013);
   }
   
   .bg-yellow-box::after {
     background: linear-gradient(71deg, #110e0e, #afa220, #110e0e);
-  }
+  } */
   
   
-  .rcard-title {
+  /* .rcard-title {
     font-weight: 600;
     color: white;
     letter-spacing: -0.02em;
@@ -321,15 +322,15 @@ input {
     font-style: normal;
     font-size: 28px;
     padding-bottom: 8px;
-  }
+  } */
   
-  .rcard-description {
+  /* .rcard-description {
     font-weight: 600;
     line-height: 32px;
     color: hsla(0, 0%, 100%, 0.5);
     font-size: 16px;
-    max-width: 470px;
-  }
+    max-width: 470px; */
+  /* } */ 
 
   .happyhour {
     display: "inline-block";
