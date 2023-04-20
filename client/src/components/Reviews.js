@@ -1,23 +1,39 @@
 import React, {useState, useEffect} from "react";
 import ReviewCard from "./ReviewCard";
+import KRT_KITCHEN from "../images/KRT_KITCHEN.png"
 
 function Reviews({reviewCard}){
   const [reviews, setReviews] = useState([])
+
+
   function onDeleteReview(reviewToDelete){
     const updatedReviews= reviews.filter((review) =>review.id !== reviewToDelete.id)
     setReviews(updatedReviews)
   }
+  const [reviewArray, setReviewArray] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:5555/reviews")
+    .then ((r) => r.json())
+    .then(setReviewArray)
+  }, [])
+  function onUpdateReview(updatedReview) {
+    const updatedReviews = reviewArray.map((review) =>review.id === updatedReview.id ? updatedReview : review)
+    setReviewArray(updatedReviews)
+  }
+
   useEffect(() => {
     fetch("http://localhost:5555/reviews")
     .then(respose => respose.json())
     .then(setReviews)
 
   }, [])
+  
     const reviewCards = reviews.map((review) =>{
-      return <ReviewCard key={review.id} review={review} onDeleteReview={onDeleteReview}/>
+      return <ReviewCard key={review.id} review={review} onDeleteReview={onDeleteReview} onUpdateRating={onUpdateReview}/>
     })
 
-    const [reviewArray, setReviewArray]= useState([])
+    // const [reviewArray, setReviewArray]= useState([])
     const [formData, SetFormData] = useState({
       rating_:"",
       review:"",
@@ -51,38 +67,68 @@ function Reviews({reviewCard}){
       .then(onAddReview)
     }
     function onAddReview(newReview){
-        setReviewArray(...reviewArray, newReview)
+        setReviews([...reviews, newReview])
 
     }
+
      
     return (
     <div>
       
       {reviewCards}
-      <h1>ADD A REVIEW </h1>
-        <form onSubmit={ handleSubmit }>
-        <div>
-         <input value ={formData.rating_} onChange={handleChange}name="rating_" type="number" placeholder="Rating"/>
+     
+      <div className="sidenav">
+      <div class="container">
+	     {/* <!-- code here --> */}
+	    <div class="card">
+        
+	     	<div class="card-image">	
+         <img  className = "fimg" src={KRT_KITCHEN} />
+		      	{/* <h2 class="card-heading">
+				Get started
+				<small>Let us create your account</small>
+			</h2> */}
+      
+		</div>
+   
+        <form class="card-form" onSubmit={ handleSubmit }>
+        <div class="input">
+      
+       <input class="input-field"  value ={formData.rating_} onChange={handleChange}name="rating_" type="number" placeholder="Rating"/>
+       <label class="input-label">Rating</label>
        </div>
+      
        {/* <div>
        <input inputStyle="underline" labelStyle="stacked" startIcon="bubble" placeholder="Textarea with left icon" label="About me">
          </div> */}
-         <div>
-         <input value ={formData.review} onChange={handleChange}name="review" type="text" placeholder="Review"/>
+         <div class="input">
+         <input class="input-field" value ={formData.review} onChange={handleChange}name="review" type="text" placeholder="Review"/>
+         <label class="input-label">How'd we do?</label>
        </div>
-       <div>
-         <input value ={formData.img} onChange={handleChange}name="img" type= "text" placeholder="Image"/>
+       <div class="input">
+         <input  class="input-field" value ={formData.img} onChange={handleChange}name="img" type= "text" placeholder="Image"/>
+         <label class="input-label">Add an image?</label>
         </div>
-       <div>
-       <div>
-         <input value ={formData.user_id} onChange={handleChange}name="user_id" type="number" placeholder="U Id"/>
+      
+       <div class="input">
+         <input class="input-field" value ={formData.user_id} onChange={handleChange}name="user_id" type="number" placeholder="U Id"/>
+         <label class="input-label">User</label>
        </div>
-       <div>
-         <input value ={formData.restaurant_id} onChange={handleChange}name="restaurant_id" type="number" placeholder="R id"/>
+       <div class="input">
+         <input class="input-field" value ={formData.restaurant_id} onChange={handleChange}name="restaurant_id" type="number" placeholder="R id"/>
+         <label class="input-label">Location</label>
        </div>
-        <button type='submit'>Submit Review</button>
+       <div class="action">
+        <button class="action-button" type='submit'>Submit Review</button>
       </div>
       </form>
+      <div class="card-info">
+			<p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
+		  </div>
+	     </div>
+    </div>
+      </div>
+      
     </div>
     );
  
