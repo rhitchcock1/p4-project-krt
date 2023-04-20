@@ -7,10 +7,10 @@ const RestaurantFront = ({ restaurant }) => {
  
 
     return (
-        <div>
+        <div className="restaurantFront" style={{border: '5px solid grey'}}>
             <h1>{restaurant.location}</h1>
             <div className="med" >
-            <img src={restaurant.img} alt={restaurant.img}/>
+            <img src={restaurant.img} alt={restaurant.img} style={{border: '5px solid white'}}/>
             </div>
             <h2>{restaurant.name}</h2>
         </div>
@@ -25,12 +25,14 @@ const RestaurantBack = ({ restaurant }) => {
     const fp = restaurant.reviews.map((review) => {
         return (
             <>
+        <div className="restaurantBack"style={{border: '2px dotted yellow'}}>
         <h2>{review.review}</h2> 
         <h1>{review.rating}</h1>
         <div className='small'>
         <img src={review.img} alt={review.img}/>
         </div>
         <h4>{review.date}</h4>
+        </div>
 
         </>
         )
@@ -41,7 +43,7 @@ const RestaurantBack = ({ restaurant }) => {
  
 
     return (
-        <div>
+        <div className="restaurantBack">
             <div>{fp}</div>
             <p>No more Reviews! Have a Great day!</p>
         
