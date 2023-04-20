@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 
 function Location(){
    
     const [selectedElement, setSelectedElement] = useState(null)
-    const [showInfoWindow, setInfoWindowFlag] = useState(true);
+    // const [showInfoWindow, setInfoWindowFlag] = useState(true);
     const {isLoaded, loadError} = useLoadScript({
         googleMapsApiKey:"AIzaSyDYBi02LqFbjqIoS9vm-1f_R53wzEh5im8"
         });
-        const mapRef = React.useRef();
-        const onMapLoad = React.useCallback((map) => {
+        const mapRef = useRef();
+        const onMapLoad = useCallback((map) => {
         mapRef.current = map;
         }, []);
         if(loadError) return "Error";
