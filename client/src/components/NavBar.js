@@ -60,6 +60,16 @@ function NavBar() {
       >
         Restaurant
       </NavLink>
+      <NavLink
+        to="/locations"
+        exact
+        style={linkStyles}
+        activeStyle={{
+          background: "white" ,
+        }}
+      >
+        Locations
+      </NavLink>
 
     </div>
   );
