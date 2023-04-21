@@ -43,12 +43,6 @@ class Restaurant(db.Model, SerializerMixin):
     reviews = db.relationship('Review', backref = 'restaurant', cascade = 'all, delete-orphan')
     users = association_proxy('reviews', 'user')
 
-    @validates('location')
-    def validate_location(self, key, location):
-        locations = ['North','South', 'East', 'West']
-        if location not in locations:
-            raise ValueError('must be valid location')
-        return location
 
 
 class Review(db.Model, SerializerMixin):
@@ -63,9 +57,8 @@ class Review(db.Model, SerializerMixin):
     created_at = db.Column(db.DateTime, server_default = db.func.now())
     updated_at = db.Column(db.DateTime, onupdate = db.func.now())
 
-    @validates('location')
-    def validate_location(self, key, location):
-        locations = ['North','South', 'East', 'West']
-        if location not in locations:
-            raise ValueError('must be valid location')
-        return location
+    @validates('rating')
+    def validate_rating(self, key, rating_num):
+        if not (1 <= rating_num <= 10):
+            raise ValueError('rating must be be between 1 and 10!')
+        return rating_num
