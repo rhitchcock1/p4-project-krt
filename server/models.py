@@ -57,7 +57,7 @@ class Review(db.Model, SerializerMixin):
     created_at = db.Column(db.DateTime, server_default = db.func.now())
     updated_at = db.Column(db.DateTime, onupdate = db.func.now())
 
-    @validates('rating')
+    @validates('rating_')
     def validate_rating(self, key, rating_num):
         if not (1 <= rating_num <= 10):
             raise ValueError('rating must be be between 1 and 10!')
