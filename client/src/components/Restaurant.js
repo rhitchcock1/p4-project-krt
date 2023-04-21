@@ -89,7 +89,7 @@ function Restaurant({restaurant}){
     }
 
     return (
-        <div onClick={toggleFront} >
+        <div className = "rstuff" onClick={toggleFront} >
             {showFront ? <RestaurantFront restaurant={restaurant} /> : <RestaurantBack restaurant={restaurant} /> }
         </div>
     )

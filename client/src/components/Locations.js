@@ -16,8 +16,8 @@ function Location(){
         if(!isLoaded) return "Maps";
 
         const containerStyle = {
-            width: '900px',
-            height: '900px'
+            width: '1500px',
+            height: '1000px'
          }; // Use any size you want!
 
          const center = {
@@ -28,6 +28,41 @@ function Location(){
 
     return (
         <div>
+           <div className="sidenav">
+            <div className="lbar">
+              <h1> North </h1>
+              <h4> 123 North St, Austin</h4>
+              <h4>512-329-0000</h4>
+              <h2>OPEN 7 DAYS A WEEK!</h2>
+              <h2>8:00 AM - 7:00 PM</h2>
+            </div>
+            <br />
+            <div className="lbar">
+              <h1> South</h1>
+              <h4> 456 South Ave, Austin</h4>
+              <h4>512-555-0005</h4>
+              <h2>OPEN 7 DAYS A WEEK!</h2>
+              <h2>8:00 AM - 8:00 PM</h2>
+            </div>
+            <br />
+            <div className="lbar">
+              <h1> East </h1>
+              <h4> 123 North St, Austin</h4>
+              <h4>512-329-0000</h4>
+              <h2>OPEN 7 DAYS A WEEK!</h2>
+              <h2>8:00 AM - 7:00 PM</h2>
+            </div>
+            <br />
+            <div className="lbar">
+              <h1>West</h1>
+              <h4> 123 North St, Austin</h4>
+              <h4>512-329-0000</h4>
+              <h2>OPEN 7 DAYS A WEEK!</h2>
+              <h2>8:00 AM - 7:00 PM</h2>
+            </div>
+
+
+           </div>
         <div className = "maps">
         <GoogleMap
      mapContainerStyle={containerStyle}

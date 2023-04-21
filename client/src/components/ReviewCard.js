@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 function ReviewCard({ review, onDeleteReview, onUpdateReview }) {
+  
   const [likes, setLikes] = useState(review.rating_);
 
   function handleDelete() {

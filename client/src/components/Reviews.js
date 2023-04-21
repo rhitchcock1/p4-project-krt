@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from "react";
 import ReviewCard from "./ReviewCard";
-import KRT_KITCHEN from "../images/KRT_KITCHEN.png"
+import reviews_img from "../images/reviews_img.png"
 
 function Reviews({reviewCard}){
+
+
   const [reviews, setReviews] = useState([])
 
 
@@ -28,10 +30,19 @@ function Reviews({reviewCard}){
     .then(setReviews)
 
   }, [])
+  // const [searchTerm, setSearchTerm] = useState("")
+  // function handleSChange(e){
+  //   setSearchTerm(e.target.value)
+  // }
+  // const reviewToDisplay = reviews.filter((rreview)=> 
+  //   rreview.rating_.includes(searchTerm)
+  //  ) 
   
     const reviewCards = reviews.map((review) =>{
       return <ReviewCard key={review.id} review={review} onDeleteReview={onDeleteReview} onUpdateRating={onUpdateReview}/>
     })
+
+
 
     // const [reviewArray, setReviewArray]= useState([])
     const [formData, SetFormData] = useState({
@@ -77,12 +88,20 @@ function Reviews({reviewCard}){
       {reviewCards}
      
       <div className="sidenav">
+        <div>
+          <form>
+            <div>
+          {/* <input  onChange={handleSChange} ></input> */}
+        
+          </div>
+          </form>
+        </div>
       <div class="container">
 	     {/* <!-- code here --> */}
 	    <div class="card">
         
 	     	<div class="card-image">	
-         <img  className = "fimg" src={KRT_KITCHEN} />
+         <img  className = "fimg" src={reviews_img} alt = "review us"/>
 		      	{/* <h2 class="card-heading">
 				Get started
 				<small>Let us create your account</small>
@@ -114,10 +133,10 @@ function Reviews({reviewCard}){
        </div>
        <div class="input">
            <select class="input-field" onChange={handleChange}>
-             <option class="input-field" id="North" value ="1" >North</option> 
-             <option class="input-field" id="South" value ="2">South</option> 
-             <option class="input-field" id="East" value ="3">East</option> 
-             <option class="input-field" id="West" value ="4">West</option> {/* {formData.restaurant_id} */}
+             <option class="input-field" id="North" value = {formData.user_id = 1} >North</option> 
+             <option class="input-field" id="South" value ={ 2 }>South</option> 
+             <option class="input-field" id="East" value = "3" >East</option> 
+             <option class="input-field" id="West" value ="int(4)">West</option> {/* {formData.restaurant_id} */}
            </select>
          <label class="input-label">Location</label>        
        </div>
