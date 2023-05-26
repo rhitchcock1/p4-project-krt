@@ -9,13 +9,20 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData
 
 # Local imports
-db = SQLAlchemy()
+
 # Instantiate app, set attributes
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI')
+app = Flask(
+    __name__,
+    static_url_path='',
+    static_folder='../client/build',
+    template_folder='../client/build',
+)
+
+app.secret_key = b'Y\xf1Xz\x00\xad|eQ\x80t \xca\x1a\x10K'
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://rob:kqjym1HLjKq44SNsXeuB40WRk70v85i5@dpg-chod2srhp8u2m2stporg-a.ohio-postgres.render.com/krt_kitchen"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.json.compact = False
-
+db = SQLAlchemy()
 migrate = Migrate(app, db)
 db.init_app(app)
 
