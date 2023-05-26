@@ -228,7 +228,7 @@ input {
 
 .restaurantFront {
 	border: grey solid;
-	margin: 0 600px 6px;
+	/* margin: 0 600px 6px; */
 	border-radius: 45px;
     padding: 1rem 1rem;
 	background-color: #1E1B1B;
