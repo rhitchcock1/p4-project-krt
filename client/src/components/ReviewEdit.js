@@ -8,7 +8,7 @@ function EditCard({review, onUpdateReview}){
 
     function handleSubmit(e){
         e.preventDefault();
-        fetch(`http://localhost:5555/reviews/${review.id}`, {
+        fetch(`https://krt-kitchen.onrender.com/api/reviews/${review.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

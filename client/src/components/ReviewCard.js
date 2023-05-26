@@ -5,7 +5,7 @@ function ReviewCard({ review, onDeleteReview, onUpdateReview }) {
   const [likes, setLikes] = useState(review.rating_);
 
   function handleDelete() {
-    fetch(`http://localhost:5555/reviews/${review.id}`, {
+    fetch(`https://krt-kitchen.onrender.com/api/reviews/${review.id}`, {
       method: "DELETE",
     });
     onDeleteReview(review);
@@ -16,7 +16,7 @@ function ReviewCard({ review, onDeleteReview, onUpdateReview }) {
       rating_: likes + 1,
     };
 
-    fetch(`http://localhost:5555/reviews/${review.id}`, {
+    fetch(`https://krt-kitchen.onrender.com/api/reviews/${review.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function ReviewCard({ review, onDeleteReview, onUpdateReview }) {
       rating_: likes - 1,
     };
 
-    fetch(`http://localhost:5555/reviews/${review.id}`, {
+    fetch(`https://krt-kitchen.onrender.com/api/reviews/${review.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

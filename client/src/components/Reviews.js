@@ -15,7 +15,7 @@ function Reviews({reviewCard}){
   const [reviewArray, setReviewArray] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:5555/reviews")
+    fetch("https://krt-kitchen.onrender.com/api/reviews")
     .then ((r) => r.json())
     .then(setReviewArray)
   }, [])
@@ -25,7 +25,7 @@ function Reviews({reviewCard}){
   }
 
   useEffect(() => {
-    fetch("http://localhost:5555/reviews")
+    fetch("https://krt-kitchen.onrender.com/api/reviews")
     .then(respose => respose.json())
     .then(setReviews)
 
@@ -69,7 +69,7 @@ function Reviews({reviewCard}){
         user_id: formData.user_id,
         restaurant_id: formData.restaurant_id,
       }
-      fetch('http://localhost:4000/reviews', { // our specific link needs to be added
+      fetch('https://krt-kitchen.onrender.com/api/reviews', { // our specific link needs to be added
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newReview)

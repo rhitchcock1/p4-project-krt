@@ -14,7 +14,7 @@ function App() {
   const [restaurants, setRestaurants] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:5555/restaurants")
+    fetch("https://krt-kitchen.onrender.com/api/restaurants")
     .then(respose => respose.json())
     .then(setRestaurants)
 

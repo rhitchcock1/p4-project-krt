@@ -48,7 +48,7 @@ class Reviews(Resource):
         db.session.commit()
         return make_response(new_review.to_dict(), 201)
     
-api.add_resource(Reviews, "/reviews")
+api.add_resource(Reviews, "/api/reviews")
 
 class ReviewById(Resource):
     def get(self, id):
@@ -74,7 +74,7 @@ class ReviewById(Resource):
         db.session.commit()
         return make_response(review.to_dict(), 201)
     
-api.add_resource(ReviewById, "/reviews/<int:id>")
+api.add_resource(ReviewById, "/api/reviews/<int:id>")
     
 
 class Users(Resource):
@@ -100,7 +100,7 @@ class Users(Resource):
         db.session.commit()
         return make_response(new_user.to_dict(), 201)
     
-api.add_resource(Users, "/users")
+api.add_resource(Users, "/api/users")
     
 
 class Restaurants(Resource):
@@ -128,7 +128,7 @@ class Restaurants(Resource):
         db.session.commit()
         return make_response(new_restaurant.to_dict(), 201)
 
-api.add_resource(Restaurants, "/restaurants")
+api.add_resource(Restaurants, "/api/restaurants")
 
 
 if __name__ == '__main__':
