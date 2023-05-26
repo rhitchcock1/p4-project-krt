@@ -59,6 +59,6 @@ class Review(db.Model, SerializerMixin):
 
     @validates('rating_')
     def validate_rating(self, key, rating_num):
-        if not (1 <= rating_num <= 10):
+        if not (1 <= int(rating_num) <= 10):
             raise ValueError('rating must be be between 1 and 10!')
         return rating_num

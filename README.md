@@ -1,5 +1,5 @@
 # Phase 4 Full-Stack Application Project Template
-
+![Alt text](client/src/images/p4-krt.png "Title")
 ## Learning Goals
 
 - Discuss the basic directory structure of a full-stack Flask/React application.

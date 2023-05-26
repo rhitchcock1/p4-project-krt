@@ -3,14 +3,22 @@
 # Standard library imports
 
 # Remote library imports
-from flask import request, make_response
+from flask import request, make_response, render_template
 from flask_restful import Resource
 
 # Local imports
 from config import app, db, api
 from config import app
 from models import User, Restaurant, Review
+from dotenv import load_dotenv
+load_dotenv()
 
+
+
+@app.route('/')
+@app.route('/<int:id>')
+def index(id=0):
+    return render_template('index.html')
 # Views go here!
 @app.route('/')
 def index():

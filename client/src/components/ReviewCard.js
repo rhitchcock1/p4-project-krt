@@ -31,6 +31,7 @@ function ReviewCard({ review, onDeleteReview, onUpdateReview }) {
   }
 
   function handleDisLikeClick() {
+    
     const updateObj = {
       rating_: likes - 1,
     };

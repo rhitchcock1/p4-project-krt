@@ -16,7 +16,7 @@
 
 }
 .home {
-    width: 1300px;
+    width: 1500px;
 }
 img {
     width: 400px;
@@ -50,7 +50,7 @@ img {
 }
 
 .menui {
-    width: 775px;
+    width: 900px;
 }
 
 .menus {
@@ -236,8 +236,8 @@ input {
   }
   .restaurantBack {
     border: dotted yellow;
-    background-color: #1E1B1B;
-	margin: .5 600px 6px;
+    background-color: grey;
+	  /* margin: .5 600px 6px; */
     
 
   }

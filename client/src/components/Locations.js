@@ -16,7 +16,7 @@ function Location(){
         if(!isLoaded) return "Maps";
 
         const containerStyle = {
-            width: '1500px',
+            width: '1900px',
             height: '1000px'
          }; // Use any size you want!
 
@@ -67,7 +67,7 @@ function Location(){
         <GoogleMap
      mapContainerStyle={containerStyle}
      center={center}
-     zoom={11}
+     zoom={12}
      onLoad={onMapLoad}
     //  onClick={onMapClick}
 
