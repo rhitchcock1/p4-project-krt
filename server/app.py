@@ -15,14 +15,14 @@ from models import User, Restaurant, Review
 
 
 
-# @app.route('/')
-# @app.route('/<int:id>')
-# def index(id=0):
-#     return render_template('index.html')
-# Views go here!
 @app.route('/')
-def index():
-    return '<h1>Restraunt KRT</h1>'
+@app.route('/<int:id>')
+def index(id=0):
+    return render_template('index.html')
+# Views go here!
+# @app.route('/')
+# def index():
+#     return '<h1>Restraunt KRT</h1>'
 
 class Reviews(Resource):
     def get(self):
