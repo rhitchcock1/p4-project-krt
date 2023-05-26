@@ -11,6 +11,8 @@ sqlalchemy-serializer = "*"
 flask-restful = "*"
 flask-cors = "*"
 importlib-resources = "*"
+gunicorn = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
